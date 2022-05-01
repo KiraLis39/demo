@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    db:
+        image: postgres:13.3-alpine
+        container_name: demo_base
+        ports:
+          - "5433:5432"
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: '0358'
+          POSTGRES_DB: postgres
+        volumes:
+            - ./db/migration/V1__init.sql:/docker-entrypoint-initdb.d/init.sql

@@ -1,0 +1,38 @@
+<div>
+    <p></p>
+    <h3>= Каталог клиентов =</h3>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>createDate</td>
+            <td>actions</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="c in clientsList">
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.createDate}}</td>
+            <td>
+                <button class="btn btn-primary" ng-click="showInfo(c)">Инфо</button>
+                <button class="btn btn-primary" ng-click="deleteThat(c.id)">Удалить</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p></p>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item" ng-repeat="pageIndex in paginationArray">
+                <button class="page-link" ng-click="loadClients(pageIndex)">{{pageIndex}}</button>
+            </li>
+        </ul>
+    </nav>
+
+    <button class="btn btn-primary" ng-click="loadClients()">Обновить всё</button>
+</div>
