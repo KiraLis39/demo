@@ -8,7 +8,6 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
 @Entity
 @Table(name = "orders", schema = "public")
 public class Order {

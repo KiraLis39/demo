@@ -17,7 +17,6 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
 @Entity
 @Validated
 @Table(name = "clients")

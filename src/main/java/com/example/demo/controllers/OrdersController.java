@@ -21,9 +21,6 @@ public class OrdersController {
     private final OrdersServiceImpl ordersService;
     private final ClientsServiceImpl clientsService;
 
-    /**
-     * Список всех заказов.
-     */
     @GetMapping("/data")
     @ResponseBody
     public Page<OrderDTO> findAll(@RequestParam(defaultValue = "0", name = "p") int pageIndex) {
@@ -61,9 +58,6 @@ public class OrdersController {
         throw new OperationFailedException("Operation was failed!");
     }
 
-    /**
-     * Удаление заказа
-     */
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Order order) {
         ordersService.deleteById(order.getId());

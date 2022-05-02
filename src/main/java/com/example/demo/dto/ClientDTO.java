@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,7 +17,8 @@ public class ClientDTO {
     Long id;
 
     @NotNull(message = "Имя не может быть пустым!")
-    @Length(min = 3, max = 255, message = "Длина имени от 3 до 255 символов!")
+    @Length(min=3, max = 255, message = "Длина имени от 3 до 255 символов!")
+    @Size(min=3, max = 255, message = "Длина имени от 3 до 255 символов!")
     String name;
     @NotNull
     LocalDateTime createDate;

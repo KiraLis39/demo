@@ -2,7 +2,7 @@ logging:
   charset: UTF-8
   level:
     org:
-      springframework: DEBUG
+      springframework: WARN
 
 server:
   port: 8189
